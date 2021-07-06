@@ -1,5 +1,5 @@
 <html>
 <body>
-<h2>Welcome to KK JavaTutorials..</h2>
+<h2>First CICD pipelie</h2>
 </body>
 </html>
