@@ -1,5 +1,5 @@
 <html>
 <body>
-<h2>second CICD pipelie auto build</h2>
+<h2>CICD pipelie with email notification</h2>
 </body>
 </html>
