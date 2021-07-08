@@ -47,6 +47,11 @@ pipeline {
             steps {
                 deploy adapters: [tomcat7(credentialsId: '46d3939a-e669-4329-817b-23c5e98741a5', path: '', url: 'http://192.168.254.138:9090')], contextPath: 'webAppExamplePS', war: '**/*.war'
             }
+            post {
+                success{
+                    emailext body: 'Deployment is successul', recipientProviders: [developers()], subject: 'webAppExample', to: 'krishna.tapdiya@afourtech.com'
+                }
+            }
         }
     }
 }
