@@ -2,16 +2,15 @@ pipeline {
     agent any
 
     tools {
-        maven "Maven_3_0_5"
+        maven "MAVEN_HOME"
     }
 
     stages {
         stage('Build') {
             steps {
-               //git 'https://gitlab.com/krashnat922/webAppExample.git'
-
-                sh "mvn -Dmaven.test.failure.ignore=true clean package"
-                //build 'webAppExamplePS'
+               
+                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
+                
             }
         
 
@@ -38,11 +37,11 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                deploy adapters: [tomcat7(credentialsId: '46d3939a-e669-4329-817b-23c5e98741a5', path: '', url: 'http://192.168.254.138:9090')], contextPath: 'webAppExamplePS', war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: '15a3ca3b-941a-41ed-9d6e-bbc1c3e569f3', path: '', url: 'http://192.168.16.247:8082/')], contextPath: 'rps', war: '**/*.war'
             }
             post {
                 success{
-                    emailext body: 'Deployment is successul', recipientProviders: [developers()], subject: 'webAppExample', to: 'krishna.tapdiya@afourtech.com'
+                    emailext body: 'Deployment successful', compressLog: true, recipientProviders: [developers()], subject: 'Build result', to: 'krishna.tapdiya@afourtech.com'
                 }
             }
         }
