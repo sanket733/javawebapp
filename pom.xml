@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.javarticles.webapp</groupId>
-	<artifactId>build pipeline</artifactId>
+	<artifactId>buildpipeline</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>webappExample Maven Webapp</name>
+	<name>buildpipeline</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
@@ -23,7 +23,7 @@
 	</dependencies>
 	
 	<build>
-		<finalName>build pipeline</finalName>
+		<finalName>buildpipeline</finalName>
 		
 		<plugins>
 	<!-- Maven Plugin for Tomcat -->
