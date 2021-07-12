@@ -1,5 +1,5 @@
 <html>
 <body>
-<h2>CICD pipelie using Jenkinsfile</h2>
+<h2> Sample java project built deployed and email sent via Jenkinsfile</h2>
 </body>
 </html>
