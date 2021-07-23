@@ -37,11 +37,11 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                deploy adapters: [tomcat9(credentialsId: '15a3ca3b-941a-41ed-9d6e-bbc1c3e569f3', path: '', url: 'http://192.168.16.247:8082/')], contextPath: 'rps', war: '**/*.war'
+                deploy adapters: [tomcat8(credentialsId: 'aa4f07a5-d477-4ca2-b37d-519adbe26bd7', path: '', url: 'http://192.168.0.132:8082/')], contextPath: '/rps', war: '**/*.war'
             }
             post {
                 success{
-                    emailext body: 'Deployment successful', compressLog: true, recipientProviders: [developers()], subject: 'Build result', to: 'krishna.tapdiya@afourtech.com'
+                    emailext body: 'Deployment successful', compressLog: true, recipientProviders: [developers()], subject: 'Build result', to: 'sanket.padgal@afourtech.com'
                 }
             }
         }
