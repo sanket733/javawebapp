@@ -37,7 +37,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                deploy adapters: [tomcat8(credentialsId: 'aa4f07a5-d477-4ca2-b37d-519adbe26bd7', path: '', url: 'http://192.168.0.132:8082/')], contextPath: 'rps', war: '**/*.war'
+                deploy adapters: [tomcat8(credentialsId: 'aa4f07a5-d477-4ca2-b37d-519adbe26bd7', path: '', url: 'http://192.168.0.132:8090/')], contextPath: 'rps', war: '**/*.war'
             }
             post {
                 success{
